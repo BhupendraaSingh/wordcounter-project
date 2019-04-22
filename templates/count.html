@@ -1,0 +1,21 @@
+<h1>Welcome To WordCounter.com</h1>
+
+<a href="{% url 'home' %}">Count New Text</a>
+<h2>There are {{ how_many_words }} words and {{ full_len }} characters in your text. {{ message }}</h2>
+<h2> And also there are {{ spec_char }} special characters (which includes : ! - * ( . ) etc) </h2>
+
+<h2>Your Text:</h2>
+
+{{ fulltext }}
+
+<h3>Word Count:</h3>
+
+{% for word, num in words_dict %}
+
+<h4>{{ word }} : {{ num }}</h4>
+
+
+{% endfor %}
+
+<br/>
+<a href="{% url 'about' %}">About</a>
